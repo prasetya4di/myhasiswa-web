@@ -16,4 +16,9 @@ class MataKuliah extends Model
     {
         return $this->hasMany(Tugas::class);
     }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
 }
