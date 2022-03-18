@@ -11,4 +11,9 @@ class Mahasiswa extends Model
 
     protected $table = 'mahasiswa';
     protected $primaryKey = 'nim';
+
+    public function mataKuliah()
+    {
+        return $this->hasMany(MataKuliah::class);
+    }
 }

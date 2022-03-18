@@ -13,7 +13,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
-            $table->string("nim")->index();
+            $table->string("nim")->primary();
             $table->string("nama");
             $table->text("alamat");
             $table->date("ttl");
