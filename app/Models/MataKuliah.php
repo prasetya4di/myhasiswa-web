@@ -11,4 +11,9 @@ class MataKuliah extends Model
 
     protected $table = "mata_kuliah";
     protected $primaryKey = "kode_matkul";
+
+    public function tugas()
+    {
+        return $this->hasMany(Tugas::class);
+    }
 }
