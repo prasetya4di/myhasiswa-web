@@ -25,6 +25,7 @@ return new class extends Migration {
             $table->date("tanggal_selesai");
             $table->integer("status");
             $table->timestamps();
+            $table->foreign("nim_id")->references("nim")->on("mahasiswa");
         });
     }
 

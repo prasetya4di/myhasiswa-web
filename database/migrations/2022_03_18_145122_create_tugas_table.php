@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->date("tanggal_pengumpulan");
             $table->string("link_pengumpulan");
             $table->timestamps();
+            $table->foreign("kode_matkul_id")->references("kode_matkul")->on("mata_kuliah");
         });
     }
 

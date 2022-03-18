@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->string("no_handphone");
             $table->string("email");
             $table->timestamps();
+            $table->foreign("users_id")->references("id")->on("user");
         });
     }
 

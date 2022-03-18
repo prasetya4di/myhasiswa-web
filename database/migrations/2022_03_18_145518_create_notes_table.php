@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->date("tanggal");
             $table->text("note");
             $table->timestamps();
+            $table->foreign("kode_matkul_id")->references("kode_matkul")->on("mata_kuliah");
         });
     }
 
