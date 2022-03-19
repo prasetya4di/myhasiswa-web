@@ -52,12 +52,20 @@ class AuthController extends Controller
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
+        $userExist = User::where('email', $request['email'])->exists();
+
+        if (!$userExist) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
         $user = User::where('email', $request['email'])->firstOrFail();
 
+        if (!(Hash::check($request['password'], $user->getAuthPassword()))) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
         $token = $user->createToken('auth_token')->plainTextToken;
-
         $mahasiswa = $user->mahasiswa();
-
         return response()->json([
             'data' => $mahasiswa,
             'access_token' => $token,
