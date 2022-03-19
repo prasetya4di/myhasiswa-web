@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->string("nim")->primary();
-            $table->string("users_id");
+            $table->unsignedBigInteger("users_id");
             $table->string("nama");
             $table->text("alamat");
             $table->date("ttl");
@@ -22,7 +22,7 @@ return new class extends Migration {
             $table->string("prodi");
             $table->string("no_handphone");
             $table->timestamps();
-            $table->foreign("users_id")->references("id")->on("user");
+            $table->foreign("users_id")->references("id")->on("users");
         });
     }
 
