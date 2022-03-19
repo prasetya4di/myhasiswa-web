@@ -13,17 +13,16 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'nim' => 'required|string|email|max:255|unique:mahasiswa',
+            'nim' => 'required|string|unique:mahasiswa',
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
-            'alamat' => 'required|string',
-            'ttl' => 'required|date',
+            'address' => 'required|string',
+            'birth_date' => 'required|date',
             'gender' => 'required|string|max:1',
-            'prodi' => 'required|string',
-            'no_handphone' => 'required|string'
+            'study_plan' => 'required|string',
+            'phone_number' => 'required|string'
         ]);
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -33,17 +32,18 @@ class AuthController extends Controller
         $mahasiswa = Mahasiswa::create([
             'nim' => $request->nim,
             'users_id' => $user->id,
-            'nama' => $user->name,
-            'alamat' => $user->alamat,
-            'ttl' => $user->ttl,
-            'gender' => $user->gender,
-            'prodi' => $user->no_handphone,
+            'name' => $user->name,
+            'address' => $request->address,
+            'birth_date' => $request->birth_date,
+            'gender' => $request->gender,
+            'study_plan' => $request->study_plan,
+            'phone_number' => $request->phone_number
         ]);
         return response()->json([
             'data' => $mahasiswa,
             'access_token' => $token,
-            'token_type' => 'Bearer',
-        ]);
+            'token_type' => 'Bearer'
+        ], 201);
     }
 
     public function login(Request $request)

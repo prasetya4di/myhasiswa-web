@@ -15,12 +15,12 @@ return new class extends Migration {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->string("nim")->primary();
             $table->unsignedBigInteger("users_id");
-            $table->string("nama");
-            $table->text("alamat");
-            $table->date("ttl");
+            $table->string("name");
+            $table->text("address");
+            $table->date("birth_date");
             $table->string("gender");
-            $table->string("prodi");
-            $table->string("no_handphone");
+            $table->string("study_plan");
+            $table->string("phone_number");
             $table->timestamps();
             $table->foreign("users_id")->references("id")->on("users");
         });
