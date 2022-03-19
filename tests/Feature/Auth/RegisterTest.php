@@ -28,7 +28,7 @@ class RegisterTest extends TestCase
         );
         $response = $this->post('/api/register', array_merge($user, $mahasiswa));
 
-        $response->assertStatus(201);
+        $response->assertCreated();
         $this->assertDatabaseHas('users', [
             'email' => $user['email']
         ]);

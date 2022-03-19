@@ -24,7 +24,7 @@ class LoginTest extends TestCase
             'password' => $this->password
         ]);
 
-        $response->assertStatus(200);
+        $response->assertOk();
     }
 
     public function test_login_should_return_error_code_401_when_email_or_password_incorrect()
@@ -34,7 +34,7 @@ class LoginTest extends TestCase
             'password' => $this->faker->password
         ]);
 
-        $response->assertStatus(401)->assertJson(['message' => 'Unauthorized']);
+        $response->assertUnauthorized()->assertJson(['message' => 'Unauthorized']);
     }
 
     protected function setUp(): void

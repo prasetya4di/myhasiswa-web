@@ -28,9 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
     Route::controller(MahasiswaController::class)->group(function () {
-        Route::get("/mahasiswa", 'index');
         Route::get("/mahasiswa/{nim}", 'show');
-        Route::post("/mahasiswa", 'store');
         Route::put("/mahasiswa/{nim}", 'update');
         Route::delete("/mahasiswa/{nim}", 'destroy');
     });
