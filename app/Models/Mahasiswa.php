@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @mixin Builder
@@ -12,10 +13,12 @@ use Illuminate\Database\Eloquent\Model;
 class Mahasiswa extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'mahasiswa';
     protected $primaryKey = 'nim';
     protected $guarded = [];
+    public $incrementing = false;
 
     public function mataKuliah()
     {

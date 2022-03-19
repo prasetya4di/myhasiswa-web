@@ -7,13 +7,13 @@ use App\Models\User;
 use Faker\Factory;
 use Faker\Generator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class MahasiswaTest extends TestCase
 {
     use RefreshDatabase;
 
-    private string $token = "";
     private Mahasiswa $mahasiswa;
     private Generator $faker;
 
@@ -27,37 +27,28 @@ class MahasiswaTest extends TestCase
             "study_plan" => $this->faker->randomLetter(),
             "phone_number" => $this->faker->phoneNumber()
         );
-        $response = $this
-            ->withHeader("token", $this->token)
-            ->post("/api/mahasiswa/{$this->mahasiswa->nim}", $updatedMahasiswa);
-
+        $response = $this->put("/api/mahasiswa/{$this->mahasiswa->nim}", $updatedMahasiswa);
         $response->assertOk();
         $this->assertDatabaseHas('mahasiswa', $updatedMahasiswa);
     }
 
     public function test_show_should_return_matched_data_if_success_and_found()
     {
-        $response = $this
-            ->withHeader("token", $this->token)
-            ->get("/api/mahasiswa/{$this->mahasiswa->nim}");
+        $response = $this->get("/api/mahasiswa/{$this->mahasiswa->nim}");
 
         $response->assertOk();
     }
 
     public function test_show_should_return_404_if_mahasiswa_not_found()
     {
-        $response = $this
-            ->withHeader("token", $this->token)
-            ->get("/api/mahasiswa/{$this->faker->randomLetter()}");
+        $response = $this->get("/api/mahasiswa/{$this->faker->randomLetter()}");
 
         $response->assertNotFound();
     }
 
     public function test_delete_should_soft_delete_mahasiswa_data()
     {
-        $response = $this
-            ->withHeader("token", $this->token)
-            ->delete("/api/mahasiswa/{$this->mahasiswa->nim}");
+        $this->delete("/api/mahasiswa/{$this->mahasiswa->nim}");
 
         $this->assertSoftDeleted($this->mahasiswa);
     }
@@ -65,12 +56,13 @@ class MahasiswaTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $mahasiswa = Mahasiswa::factory()->create();
-        $user = User::where('id', $mahasiswa->users_id)->firstOrFail();
-        $this->email = $user->email;
-        $token = $user->createToken('auth_token')->plainTextToken;
-        $this->token = "Bearer $token";
-        $this->mahasiswa = $mahasiswa;
         $this->faker = Factory::create();
+        $mahasiswa = Mahasiswa::factory()->create();
+        $user = User::find($mahasiswa->users_id);
+        $this->mahasiswa = $mahasiswa;
+        Sanctum::actingAs(
+            $user,
+            ['*']
+        );
     }
 }

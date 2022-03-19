@@ -22,6 +22,7 @@ return new class extends Migration {
             $table->string("study_plan");
             $table->string("phone_number");
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign("users_id")->references("id")->on("users");
         });
     }
