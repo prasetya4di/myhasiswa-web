@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\NoteController;
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
@@ -50,4 +55,5 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put("/note/{nomor_note}", 'update');
         Route::delete("/note/{nomor_note}", 'destroy');
     });
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
