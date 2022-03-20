@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Models\Mahasiswa;
 use App\Models\User;
 use Faker\Factory;
 use Faker\Generator;
@@ -40,8 +39,7 @@ class LoginTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $mahasiswa = Mahasiswa::factory()->create();
-        $user = User::where('id', $mahasiswa->users_id)->firstOrFail();
+        $user = User::factory()->hasMahasiswa()->create();
         $this->email = $user->email;
         $this->faker = Factory::create();
     }

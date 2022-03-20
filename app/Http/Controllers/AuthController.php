@@ -31,7 +31,7 @@ class AuthController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
         $mahasiswa = Mahasiswa::create([
             'nim' => $request->nim,
-            'users_id' => $user->id,
+            'user_id' => $user->id,
             'name' => $user->name,
             'address' => $request->address,
             'birth_date' => $request->birth_date,

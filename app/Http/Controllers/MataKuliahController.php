@@ -17,7 +17,7 @@ class MataKuliahController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $mahasiswa = Mahasiswa::where("users_id", $user->id)->first();
+        $mahasiswa = Mahasiswa::where("user_id", $user->id)->first();
         $matkul = $mahasiswa->mataKuliah()->get();
         return response()->json([
             "data" => $matkul,
@@ -44,7 +44,7 @@ class MataKuliahController extends Controller
             'tanggal_selesai' => 'required|date|after:tanggal_mulai'
         ]);
         $user = auth()->user();
-        $mahasiswa = Mahasiswa::where("users_id", $user->id)->first();
+        $mahasiswa = Mahasiswa::where("user_id", $user->id)->first();
         $matakuliah = MataKuliah::create([
             'kode_matkul' => $request->kode_matkul,
             'nama' => $request->nama,

@@ -57,9 +57,8 @@ class MahasiswaControllerTest extends TestCase
     {
         parent::setUp();
         $this->faker = Factory::create();
-        $mahasiswa = Mahasiswa::factory()->create();
-        $user = User::find($mahasiswa->users_id);
-        $this->mahasiswa = $mahasiswa;
+        $user = User::factory()->has(Mahasiswa::factory())->create();
+        $this->mahasiswa = $user->mahasiswa;
         Sanctum::actingAs(
             $user,
             ['*']

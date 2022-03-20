@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->string("nim")->primary();
-            $table->unsignedBigInteger("users_id");
+            $table->unsignedBigInteger("user_id");
             $table->string("name");
             $table->text("address");
             $table->date("birth_date");
@@ -23,7 +23,7 @@ return new class extends Migration {
             $table->string("phone_number");
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign("users_id")->references("id")->on("users");
+            $table->foreign("user_id")->references("id")->on("users");
         });
     }
 

@@ -19,7 +19,7 @@ class MahasiswaFactory extends Factory
     {
         return [
             'nim' => $this->faker->unique()->regexify('[A-Z]{5}[0-4]{3}'),
-            'users_id' => User::factory(),
+            'user_id' => User::factory(),
             'name' => $this->faker->name(),
             'address' => $this->faker->address(),
             'birth_date' => $this->faker->date(),

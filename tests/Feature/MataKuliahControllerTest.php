@@ -77,7 +77,7 @@ class MataKuliahControllerTest extends TestCase
 
     public function test_index_mata_kuliah_should_return_all_matkul_from_logged_in_user()
     {
-        $matkul = MataKuliah::factory()->count(5)->create();
+        MataKuliah::factory()->count(5)->create();
         $response = $this->get('/api/matkul');
 
         $response->assertOk();
@@ -114,10 +114,7 @@ class MataKuliahControllerTest extends TestCase
     {
         parent::setUp();
         $this->faker = Factory::create();
-        $mahasiswa = Mahasiswa::factory()->create();
-        $this->nim = $mahasiswa->nim;
-        $user = User::find($mahasiswa->users_id);
-        $this->mahasiswa = $mahasiswa;
+        $user = User::factory()->has(Mahasiswa::factory())->create();
         Sanctum::actingAs(
             $user,
             ['*']

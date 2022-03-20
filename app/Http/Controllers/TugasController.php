@@ -18,11 +18,8 @@ class TugasController extends Controller
     {
         $user = auth()->user();
         $mahasiswa = Mahasiswa::where("users_id", $user->id)->first();
-        echo "mahasiswa";
-        echo $mahasiswa;
-
         return response()->json([
-            "data" => $mahasiswa->tugas(),
+            "data" => $mahasiswa->tugas()->get(),
         ]);
     }
 

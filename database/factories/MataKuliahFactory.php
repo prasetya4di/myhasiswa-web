@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Mahasiswa;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,10 +17,9 @@ class MataKuliahFactory extends Factory
     public function definition()
     {
         $user = auth()->user();
-        $mahasiswa = Mahasiswa::where("users_id", $user->id)->first();
         return [
             "kode_matkul" => $this->faker->unique()->regexify('[A-Z]{5}[0-4]{3}'),
-            "mahasiswa_nim" => $mahasiswa->nim,
+            "mahasiswa_nim" => $user->mahasiswa->nim,
             "nama" => $this->faker->name(),
             "sks" => $this->faker->randomNumber(),
             "link_kelas" => $this->faker->url(),
