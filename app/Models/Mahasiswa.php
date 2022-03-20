@@ -32,11 +32,11 @@ class Mahasiswa extends Model
 
     public function tugas()
     {
-        return $this->hasManyThrough(MataKuliah::class, Tugas::class);
+        return $this->hasManyThrough(Tugas::class, MataKuliah::class);
     }
 
     public function notes()
     {
-        return $this->hasManyThrough(MataKuliah::class, Note::class);
+        return $this->hasManyThrough(Note::class, MataKuliah::class);
     }
 }

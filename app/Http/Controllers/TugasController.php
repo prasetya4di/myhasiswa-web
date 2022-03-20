@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mahasiswa;
 use App\Models\Tugas;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -16,10 +15,8 @@ class TugasController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
-        $mahasiswa = Mahasiswa::where("users_id", $user->id)->first();
         return response()->json([
-            "data" => $mahasiswa->tugas()->get(),
+            "data" => auth()->user()->mahasiswa->tugas,
         ]);
     }
 
@@ -32,13 +29,13 @@ class TugasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "kode_matkul_id" => 'required|string|exists:mata_kuliah,kode_matkul',
+            "mata_kuliah_kode_matkul" => 'required|string|exists:mata_kuliah,kode_matkul',
             "nama" => 'required|string',
             "tanggal_pengumpulan" => 'required|date',
             "link_pengumpulan" => 'required|string',
         ]);
         $tugas = Tugas::create([
-            "kode_matkul_id" => $request->kode_matkul_id,
+            "mata_kuliah_kode_matkul" => $request->mata_kuliah_kode_matkul,
             "nama" => $request->nama,
             "tanggal_pengumpulan" => $request->tanggal_pengumpulan,
             "link_pengumpulan" => $request->link_pengumpulan,
@@ -78,7 +75,7 @@ class TugasController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            "kode_matkul_id" => 'required|string|exists:mata_kuliah,kode_matkul',
+            "mata_kuliah_kode_matkul" => 'required|string|exists:mata_kuliah,kode_matkul',
             "nama" => 'required|string',
             "tanggal_pengumpulan" => 'required|date',
             "link_pengumpulan" => 'required|string',
@@ -89,7 +86,7 @@ class TugasController extends Controller
             return response()->json(["message" => "Tugas not found"], 404);
         }
         $tugas = Tugas::find($id);
-        $tugas->kode_matkul_id = $request->kode_matkul_id;
+        $tugas->mata_kuliah_kode_matkul = $request->mata_kuliah_kode_matkul;
         $tugas->nama = $request->nama;
         $tugas->tanggal_pengumpulan = $request->tanggal_pengumpulan;
         $tugas->link_pengumpulan = $request->link_pengumpulan;

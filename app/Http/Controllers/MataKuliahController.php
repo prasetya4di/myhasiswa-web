@@ -16,11 +16,8 @@ class MataKuliahController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
-        $mahasiswa = Mahasiswa::where("user_id", $user->id)->first();
-        $matkul = $mahasiswa->mataKuliah()->get();
         return response()->json([
-            "data" => $matkul,
+            "data" => auth()->user()->mahasiswa->mataKuliah,
         ]);
     }
 

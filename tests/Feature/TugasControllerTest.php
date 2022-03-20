@@ -16,14 +16,13 @@ class TugasControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    private string $nim = "";
     private Generator $faker;
 
     public function test_create_tugas_should_add_new_data_if_success()
     {
         $matkul = MataKuliah::factory()->create();
         $tugas = array(
-            "kode_matkul_id" => $matkul->kode_matkul,
+            "mata_kuliah_kode_matkul" => $matkul->kode_matkul,
             "nama" => $this->faker->name(),
             "tanggal_pengumpulan" => $this->faker->date(),
             "link_pengumpulan" => $this->faker->url(),
@@ -40,7 +39,7 @@ class TugasControllerTest extends TestCase
     {
         $oldtugas = Tugas::factory()->create();
         $tugas = array(
-            "kode_matkul_id" => $oldtugas->kode_matkul_id,
+            "mata_kuliah_kode_matkul" => $oldtugas->mata_kuliah_kode_matkul,
             "nama" => $this->faker->name(),
             "tanggal_pengumpulan" => $this->faker->date(),
             "link_pengumpulan" => $this->faker->url(),
@@ -57,7 +56,7 @@ class TugasControllerTest extends TestCase
     {
         $oldtugas = Tugas::factory()->create();
         $tugas = array(
-            "kode_matkul_id" => $oldtugas->kode_matkul_id,
+            "mata_kuliah_kode_matkul" => $oldtugas->mata_kuliah_kode_matkul,
             "nama" => $this->faker->name(),
             "tanggal_pengumpulan" => $this->faker->date(),
             "link_pengumpulan" => $this->faker->url(),
@@ -74,6 +73,7 @@ class TugasControllerTest extends TestCase
         $response = $this->get('/api/tugas');
 
         $response->assertOk();
+        $response->assertJsonCount(5, "data");
     }
 
     public function test_show_tugas_should_return_tugas_based_on_given_id()
@@ -108,10 +108,7 @@ class TugasControllerTest extends TestCase
     {
         parent::setUp();
         $this->faker = Factory::create();
-        $mahasiswa = Mahasiswa::factory()->create();
-        $this->nim = $mahasiswa->nim;
-        $user = User::find($mahasiswa->users_id);
-        $this->mahasiswa = $mahasiswa;
+        $user = User::factory()->has(Mahasiswa::factory())->create();
         Sanctum::actingAs(
             $user,
             ['*']
