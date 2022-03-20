@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Mahasiswa>
+ * @extends Factory
  */
 class MahasiswaFactory extends Factory
 {
@@ -18,7 +18,7 @@ class MahasiswaFactory extends Factory
     public function definition()
     {
         return [
-            'nim' => $this->faker->randomLetter(),
+            'nim' => $this->faker->unique()->regexify('[A-Z]{5}[0-4]{3}'),
             'users_id' => User::factory(),
             'name' => $this->faker->name(),
             'address' => $this->faker->address(),

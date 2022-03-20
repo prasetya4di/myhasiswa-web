@@ -23,7 +23,6 @@ return new class extends Migration {
             $table->time("waktu_kuliah");
             $table->date("tanggal_mulai");
             $table->date("tanggal_selesai");
-            $table->integer("status");
             $table->timestamps();
             $table->softDeletes();
             $table->foreign("nim_id")->references("nim")->on("mahasiswa");
