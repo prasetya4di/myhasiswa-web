@@ -20,7 +20,6 @@ class MataKuliahControllerTest extends TestCase
 
     public function test_create_mata_kuliah_should_add_new_data_if_success()
     {
-        $mahasiswa = Mahasiswa::factory()->create();
         $matkul = array(
             "kode_matkul" => $this->faker->unique()->regexify('[A-Z]{5}[0-4]{3}'),
             "nama" => $this->faker->name(),
@@ -78,10 +77,11 @@ class MataKuliahControllerTest extends TestCase
 
     public function test_index_mata_kuliah_should_return_all_matkul_from_logged_in_user()
     {
-        MataKuliah::factory()->create();
+        $matkul = MataKuliah::factory()->count(5)->create();
         $response = $this->get('/api/matkul');
 
         $response->assertOk();
+        $response->assertJsonCount(5, "data");
     }
 
     public function test_show_mata_kuliah_should_return_matkul_based_on_given_kode_matkul()

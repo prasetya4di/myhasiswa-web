@@ -14,13 +14,13 @@ return new class extends Migration {
     {
         Schema::create('tugas', function (Blueprint $table) {
             $table->id();
-            $table->string("kode_matkul_id");
+            $table->string("mata_kuliah_kode_matkul");
             $table->string("nama");
             $table->date("tanggal_pengumpulan");
             $table->string("link_pengumpulan");
             $table->boolean("status");
             $table->timestamps();
-            $table->foreign("kode_matkul_id")->references("kode_matkul")->on("mata_kuliah");
+            $table->foreign("mata_kuliah_kode_matkul")->references("kode_matkul")->on("mata_kuliah");
         });
     }
 

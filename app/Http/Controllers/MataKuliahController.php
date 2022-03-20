@@ -18,8 +18,9 @@ class MataKuliahController extends Controller
     {
         $user = auth()->user();
         $mahasiswa = Mahasiswa::where("users_id", $user->id)->first();
+        $matkul = $mahasiswa->mataKuliah()->get();
         return response()->json([
-            "data" => $mahasiswa->mataKuliah(),
+            "data" => $matkul,
         ]);
     }
 
@@ -47,7 +48,7 @@ class MataKuliahController extends Controller
         $matakuliah = MataKuliah::create([
             'kode_matkul' => $request->kode_matkul,
             'nama' => $request->nama,
-            'nim_id' => $mahasiswa->nim,
+            'mahasiswa_nim' => $mahasiswa->nim,
             'sks' => $request->sks,
             'link_kelas' => $request->link_kelas,
             'nama_dosen' => $request->nama_dosen,

@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('mata_kuliah', function (Blueprint $table) {
             $table->string("kode_matkul")->primary();
-            $table->string("nim_id");
+            $table->string("mahasiswa_nim");
             $table->string("nama");
             $table->integer("sks");
             $table->string("link_kelas");
@@ -25,7 +25,7 @@ return new class extends Migration {
             $table->date("tanggal_selesai");
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign("nim_id")->references("nim")->on("mahasiswa");
+            $table->foreign("mahasiswa_nim")->references("nim")->on("mahasiswa");
         });
     }
 

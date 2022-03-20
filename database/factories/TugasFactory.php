@@ -17,8 +17,9 @@ class TugasFactory extends Factory
      */
     public function definition()
     {
+        $matkul = MataKuliah::factory()->create();
         return [
-            "kode_matkul_id" => MataKuliah::factory(),
+            "mata_kuliah_kode_matkul" => $matkul->kode_matkul,
             "nama" => $this->faker->name(),
             "tanggal_pengumpulan" => $this->faker->date(),
             "link_pengumpulan" => $this->faker->url(),
