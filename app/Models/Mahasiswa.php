@@ -29,4 +29,14 @@ class Mahasiswa extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function tugas()
+    {
+        return $this->hasManyThrough(MataKuliah::class, Tugas::class);
+    }
+
+    public function notes()
+    {
+        return $this->hasManyThrough(MataKuliah::class, Note::class);
+    }
 }

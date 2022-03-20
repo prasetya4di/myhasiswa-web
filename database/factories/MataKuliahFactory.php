@@ -20,10 +20,10 @@ class MataKuliahFactory extends Factory
         return [
             "kode_matkul" => $this->faker->unique()->regexify('[A-Z]{5}[0-4]{3}'),
             "nim_id" => Mahasiswa::factory(),
-            "nama" => $this->faker->randomLetter(),
+            "nama" => $this->faker->name(),
             "sks" => $this->faker->randomNumber(),
-            "link_kelas" => $this->faker->randomLetter(),
-            "nama_dosen" => $this->faker->randomLetter(),
+            "link_kelas" => $this->faker->url(),
+            "nama_dosen" => $this->faker->name(),
             "hari_kuliah" => "Senin",
             "waktu_kuliah" => $this->faker->time(),
             "tanggal_mulai" => $this->faker->date(),

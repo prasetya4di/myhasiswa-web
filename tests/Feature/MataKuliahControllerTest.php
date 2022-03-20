@@ -25,7 +25,7 @@ class MataKuliahControllerTest extends TestCase
             "kode_matkul" => $this->faker->unique()->regexify('[A-Z]{5}[0-4]{3}'),
             "nama" => $this->faker->name(),
             "sks" => $this->faker->randomNumber(),
-            "link_kelas" => $this->faker->randomLetter(),
+            "link_kelas" => $this->faker->url(),
             "nama_dosen" => $this->faker->name(),
             "hari_kuliah" => "Senin",
             "waktu_kuliah" => $this->faker->time(),
@@ -45,7 +45,7 @@ class MataKuliahControllerTest extends TestCase
             "kode_matkul" => $this->faker->unique()->regexify('[A-Z]{5}[0-4]{3}'),
             "nama" => $this->faker->name(),
             "sks" => $this->faker->randomNumber(),
-            "link_kelas" => $this->faker->randomLetter(),
+            "link_kelas" => $this->faker->url(),
             "nama_dosen" => $this->faker->name(),
             "hari_kuliah" => "Senin",
             "waktu_kuliah" => $this->faker->time(),
@@ -60,12 +60,11 @@ class MataKuliahControllerTest extends TestCase
 
     public function test_edit_mata_kuliah_should_return_404_if_kode_matkul_not_found()
     {
-        $oldMatkul = MataKuliah::factory()->create();
         $matkul = array(
             "kode_matkul" => $this->faker->unique()->regexify('[A-Z]{5}[0-4]{3}'),
             "nama" => $this->faker->name(),
             "sks" => $this->faker->randomNumber(),
-            "link_kelas" => $this->faker->randomLetter(),
+            "link_kelas" => $this->faker->url(),
             "nama_dosen" => $this->faker->name(),
             "hari_kuliah" => "Senin",
             "waktu_kuliah" => $this->faker->time(),

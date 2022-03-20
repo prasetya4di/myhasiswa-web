@@ -10,4 +10,5 @@ class Note extends Model
     use HasFactory;
 
     protected $table = "notes";
+    protected $guarded = [];
 }

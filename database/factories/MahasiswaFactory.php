@@ -24,7 +24,7 @@ class MahasiswaFactory extends Factory
             'address' => $this->faker->address(),
             'birth_date' => $this->faker->date(),
             'gender' => $this->faker->randomElement(['m', 'f']),
-            'study_plan' => $this->faker->randomLetter(),
+            'study_plan' => $this->faker->text(),
             'phone_number' => $this->faker->phoneNumber()
         ];
     }
