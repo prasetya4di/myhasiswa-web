@@ -53,7 +53,7 @@ class MahasiswaController extends Controller
         $mahasiswa->save();
         return response()->json([
             'data' => $mahasiswa
-        ], 200);
+        ]);
     }
 
     /**
