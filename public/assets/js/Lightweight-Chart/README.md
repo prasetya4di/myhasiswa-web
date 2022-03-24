@@ -1,5 +1,4 @@
 # cssCharts.js
-
 jquery plugin to create simple donut, bar or line charts with dom nodes. style with css.
 
 [http://thysultan.com/projects/cssCharts/](http://thysultan.com/projects/cssCharts/)
@@ -20,7 +19,6 @@ $('.donut-chart').cssCharts({type:"donut"});
 $('.line-chart').cssCharts({type:"line"}); 
 
 ```
-
 ### example donut/pie chart
 
 optional: to trigger countUp counter for the donut chart as seen on the preview page.
