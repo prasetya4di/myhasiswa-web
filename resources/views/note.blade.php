@@ -1,6 +1,6 @@
 @extends('template.layout')
 
-@section('title', 'Home')
+@section('title', 'Note')
 
 @section('content')
     <div class="header">
