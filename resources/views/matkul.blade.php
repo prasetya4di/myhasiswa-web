@@ -5,336 +5,150 @@
 @section('content')
     <div class="header">
         <h1 class="page-header">
-            Dashboard <small>Welcome John Doe</small>
+            Mata Kuliah
         </h1>
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li class="active">Data</li>
-        </ol>
 
     </div>
     <div id="page-inner">
 
-        <!-- /. ROW  -->
-
-        <div class="row">
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="board">
-                    <div class="panel panel-primary">
-                        <div class="number">
-                            <h3>
-                                <h3>44,023</h3>
-                                <small>Daily Visits</small>
-                            </h3>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-eye fa-5x red"></i>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="board">
-                    <div class="panel panel-primary">
-                        <div class="number">
-                            <h3>
-                                <h3>32,850</h3>
-                                <small>Sales</small>
-                            </h3>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-shopping-cart fa-5x blue"></i>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="board">
-                    <div class="panel panel-primary">
-                        <div class="number">
-                            <h3>
-                                <h3>56,150</h3>
-                                <small>Comments</small>
-                            </h3>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-comments fa-5x green"></i>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="board">
-                    <div class="panel panel-primary">
-                        <div class="number">
-                            <h3>
-                                <h3>89,645</h3>
-                                <small>Daily Profits</small>
-                            </h3>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-user fa-5x yellow"></i>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-xs-12">
-                <div class="panel panel-default chartJs">
-                    <div class="panel-heading">
-                        <div class="card-title">
-                            <div class="title">Line Chart</div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <canvas id="line-chart" class="chart"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xs-12">
-                <div class="panel panel-default chartJs">
-                    <div class="panel-heading">
-                        <div class="card-title">
-                            <div class="title">Bar Chart</div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <canvas id="bar-chart" class="chart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body easypiechart-panel">
-                        <h4>Profit</h4>
-                        <div class="easypiechart" id="easypiechart-blue" data-percent="82"><span
-                                class="percent">82%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body easypiechart-panel">
-                        <h4>Sales</h4>
-                        <div class="easypiechart" id="easypiechart-orange" data-percent="55"><span
-                                class="percent">55%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body easypiechart-panel">
-                        <h4>Customers</h4>
-                        <div class="easypiechart" id="easypiechart-teal" data-percent="84"><span
-                                class="percent">84%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body easypiechart-panel">
-                        <h4>No. of Visits</h4>
-                        <div class="easypiechart" id="easypiechart-red" data-percent="46"><span
-                                class="percent">46%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!--/.row-->
-
-
-        <div class="row">
-            <div class="col-md-5">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Line Chart
-                    </div>
-                    <div class="panel-body">
-                        <div id="morris-line-chart"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-7">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Bar Chart Example
-                    </div>
-                    <div class="panel-body">
-                        <div id="morris-bar-chart"></div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-9 col-sm-12 col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Area Chart
-                    </div>
-                    <div class="panel-body">
-                        <div id="morris-area-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Donut Chart Example
-                    </div>
-                    <div class="panel-body">
-                        <div id="morris-donut-chart"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
         <div class="row">
             <div class="col-md-12">
-
-            </div>
-        </div>
-        <!-- /. ROW  -->
-
-
-        <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12">
+                <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Tasks Panel
-                    </div>
-                    <div class="panel-body">
-                        <div class="list-group">
-
-                            <a href="#" class="list-group-item">
-                                <span class="badge">7 minutes ago</span>
-                                <i class="fa fa-fw fa-comment"></i> Commented on a post
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <span class="badge">16 minutes ago</span>
-                                <i class="fa fa-fw fa-truck"></i> Order 392 shipped
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <span class="badge">36 minutes ago</span>
-                                <i class="fa fa-fw fa-globe"></i> Invoice 653 has paid
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <span class="badge">1 hour ago</span>
-                                <i class="fa fa-fw fa-user"></i> A new user has been added
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <span class="badge">1.23 hour ago</span>
-                                <i class="fa fa-fw fa-user"></i> A new user has added
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <span class="badge">yesterday</span>
-                                <i class="fa fa-fw fa-globe"></i> Saved the world
-                            </a>
-                        </div>
-                        <div class="text-right">
-                            <a href="#">More Tasks <i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-8 col-sm-12 col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Responsive Table Example
+                        Data Mata Kuliah
+                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addMatkul">
+                            <i class="fa fa-plus"></i> Tambah Matkul
+                        </button>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-matkul">
                                 <thead>
                                 <tr>
-                                    <th>S No.</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>User Name</th>
-                                    <th>Email ID.</th>
+                                    <th>Kode Matakul</th>
+                                    <th>Nama Matkul</th>
+                                    <th>Jadwal</th>
+                                    <th>Tanggal Mulai</th>
+                                    <th>Tanggal Selesai</th>
+                                    <th>Nama Dosen</th>
+                                    <th>Link Kelas</th>
+                                    <th>Aksi</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>John</td>
-                                    <td>Doe</td>
-                                    <td>John15482</td>
-                                    <td>name@site.com</td>
+                                    <td>TI19004</td>
+                                    <td>Pemrograman Web</td>
+                                    <td>Senin, 19:05</td>
+                                    <td>05 Maret 2022</td>
+                                    <td>06 September 2022</td>
+                                    <td>Pak Dosen</td>
+                                    <td><a href="https://www.google.com">https://www.google.com</a></td>
+                                    <td>
+                                        <button class="btn btn-warning" data-toggle="modal" data-target="#addMatkul">
+                                            <i class="fa fa-edit"></i> Edit
+                                        </button>
+                                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteMatkul">
+                                            <i class="fa fa-trash-o"></i> Delete
+                                        </button>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Kimsila</td>
-                                    <td>Marriye</td>
-                                    <td>Kim1425</td>
-                                    <td>name@site.com</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Rossye</td>
-                                    <td>Nermal</td>
-                                    <td>Rossy1245</td>
-                                    <td>name@site.com</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Richard</td>
-                                    <td>Orieal</td>
-                                    <td>Rich5685</td>
-                                    <td>name@site.com</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Jacob</td>
-                                    <td>Hielsar</td>
-                                    <td>Jac4587</td>
-                                    <td>name@site.com</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Wrapel</td>
-                                    <td>Dere</td>
-                                    <td>Wrap4585</td>
-                                    <td>name@site.com</td>
-                                </tr>
-
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
                 </div>
-
+                <!--End Advanced Tables -->
             </div>
         </div>
         <!-- /. ROW  -->
-
-
-        <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez.com</a></p>
-
-
-        </footer>
     </div>
-    <!-- /. PAGE INNER  -->
+    <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez.com</a></p></footer>
+    <!--  Modals data Matakuliah -->
+    <div class="modal fade" id="addMatkul" tabindex="-1" role="dialog" aria-labelledby="addMatkulLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Data Mata Kuliah</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="sub-title">Kode Matkul</div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Kode Matkul" name="kode_matkul">
+                        </div>
+                        <div class="sub-title">Nama Matkul</div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Text input" name="nama">
+                        </div>
+                        <div class="sub-title">SKS</div>
+                        <div>
+                            <input type="number" class="form-control" placeholder="Text input" name="sks">
+                        </div>
+                        <div class="sub-title">Link Kelas</div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Text input" name="link_kelas">
+                        </div>
+                        <div class="sub-title">Nama Dosen</div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Text input" name="nama_dosen">
+                        </div>
+                        <div class="sub-title">Waktu Kuliah</div>
+                        <div>
+                            <input type="time" class="form-control" placeholder="Text input" name="nama_dosen">
+                        </div>
+                        <div class="sub-title">Tanggal Mulai</div>
+                        <div>
+                            <input type="date" class="form-control" placeholder="Text input" name="nama_dosen">
+                        </div>
+                        <div class="sub-title">Tanggal Selesai</div>
+                        <div>
+                            <input type="date" class="form-control" placeholder="Text input" name="nama_dosen">
+                        </div>
+                        <div class="sub-title">Hari Kuliah <small>(Hari Kuliah otomatis sama dengan tanggal
+                                mulai)</small></div>
+                        <div>
+                            <input disabled type="date" class="form-control" placeholder="Text input"
+                                   name="hari_kuliah">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Modals data Matakuliah -->
+    <div class="modal fade" id="deleteMatkul" tabindex="-1" role="dialog" aria-labelledby="addMatkulLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Konfimasi</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Apakah anda yakin akan menghapus data ini ?</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modals -->
+    @push('scripts')
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-matkul').dataTable();
+            });
+        </script>
+    @endpush
 @endsection
