@@ -26,7 +26,7 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-matkul">
                                 <thead>
                                 <tr>
-                                    <th>Kode Matakul</th>
+                                    <th>Kode Matkul</th>
                                     <th>Nama Matkul</th>
                                     <th>Jadwal</th>
                                     <th>Tanggal Mulai</th>
@@ -79,35 +79,35 @@
                     <form>
                         <div class="sub-title">Kode Matkul</div>
                         <div>
-                            <input type="text" class="form-control" placeholder="Kode Matkul" name="kode_matkul">
+                            <input type="text" class="form-control" placeholder="Kode Mata Kuliah" name="kode_matkul">
                         </div>
                         <div class="sub-title">Nama Matkul</div>
                         <div>
-                            <input type="text" class="form-control" placeholder="Text input" name="nama">
+                            <input type="text" class="form-control" placeholder="Nama Mata Kuliah" name="nama">
                         </div>
                         <div class="sub-title">SKS</div>
                         <div>
-                            <input type="number" class="form-control" placeholder="Text input" name="sks">
+                            <input type="number" class="form-control" placeholder="SKS" name="sks">
                         </div>
                         <div class="sub-title">Link Kelas</div>
                         <div>
-                            <input type="text" class="form-control" placeholder="Text input" name="link_kelas">
+                            <input type="text" class="form-control" placeholder="Link Kelas" name="link_kelas">
                         </div>
                         <div class="sub-title">Nama Dosen</div>
                         <div>
-                            <input type="text" class="form-control" placeholder="Text input" name="nama_dosen">
+                            <input type="text" class="form-control" placeholder="Nama Dosen" name="nama_dosen">
                         </div>
                         <div class="sub-title">Waktu Kuliah</div>
                         <div>
-                            <input type="time" class="form-control" placeholder="Text input" name="nama_dosen">
+                            <input type="time" class="form-control" placeholder="Waktu Kuliah" name="nama_dosen">
                         </div>
                         <div class="sub-title">Tanggal Mulai</div>
                         <div>
-                            <input type="date" class="form-control" placeholder="Text input" name="nama_dosen">
+                            <input type="date" class="form-control" placeholder="Tanggal Mulai" name="nama_dosen">
                         </div>
                         <div class="sub-title">Tanggal Selesai</div>
                         <div>
-                            <input type="date" class="form-control" placeholder="Text input" name="nama_dosen">
+                            <input type="date" class="form-control" placeholder="Tanggal Selesai" name="nama_dosen">
                         </div>
                         <div class="sub-title">Hari Kuliah <small>(Hari Kuliah otomatis sama dengan tanggal
                                 mulai)</small></div>
@@ -125,7 +125,7 @@
         </div>
     </div>
     <!--  Modals data Matakuliah -->
-    <div class="modal fade" id="deleteMatkul" tabindex="-1" role="dialog" aria-labelledby="addMatkulLabel"
+    <div class="modal fade" id="deleteMatkul" tabindex="-1" role="dialog" aria-labelledby="deleteMatkulLabel"
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
