@@ -10,6 +10,8 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet"/>
     <!-- Morris Chart Styles-->
     <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <link href="assets/css/select2.min.css" rel="stylesheet">
+    <link href="assets/css/checkbox3.min.css" rel="stylesheet">
     <!-- Custom Styles-->
     <link href="assets/css/custom-styles.css" rel="stylesheet"/>
     <!-- Google Fonts-->
@@ -38,6 +40,8 @@
 
 <!-- Metis Menu Js -->
 <script src="assets/js/jquery.metisMenu.js"></script>
+
+<script src="assets/js/select2.full.min.js"></script>
 <!-- Morris Chart Js -->
 <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
 <script src="assets/js/morris/morris.js"></script>

@@ -94,7 +94,20 @@
                         </div>
                         <div class="sub-title">Status</div>
                         <div>
-                            <input type="text" class="form-control" placeholder="Link Kelas" name="link_kelas">
+                            <div>
+                                <div class="radio3 radio-check radio-inline">
+                                    <input type="radio" id="radioActive" name="status" value="1" checked>
+                                    <label for="radioActive">
+                                        Active
+                                    </label>
+                                </div>
+                                <div class="radio3 radio-check radio-success radio-inline">
+                                    <input type="radio" id="radioComplete" name="status" value="2">
+                                    <label for="radioComplete">
+                                        Complete
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
