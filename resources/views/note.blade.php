@@ -7,7 +7,6 @@
         <h1 class="page-header">
             Notes
         </h1>
-
     </div>
     <div id="page-inner">
 
@@ -60,7 +59,7 @@
         <!-- /. ROW  -->
     </div>
     <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez.com</a></p></footer>
-    <!--  Modals data Matakuliah -->
+    <!--  Modals data note -->
     <div class="modal fade" id="addNote" tabindex="-1" role="dialog" aria-labelledby="addNoteLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -77,11 +76,11 @@
                         </div>
                         <div class="sub-title">Tanggal</div>
                         <div>
-                            <input type="date" class="form-control" placeholder="Text input" name="nama">
+                            <input type="date" class="form-control" placeholder="Text input" name="tanggal">
                         </div>
                         <div class="sub-title">Note</div>
                         <div>
-                            <textarea class="form-control" placeholder="Catatan" name="sks"></textarea>
+                            <textarea class="form-control" placeholder="Catatan" name="note"></textarea>
                         </div>
                     </form>
                 </div>
@@ -92,7 +91,7 @@
             </div>
         </div>
     </div>
-    <!--  Modals data Matakuliah -->
+    <!--  Modals confirmation note -->
     <div class="modal fade" id="deleteNote" tabindex="-1" role="dialog" aria-labelledby="deleteNoteLabel"
          aria-hidden="true">
         <div class="modal-dialog">

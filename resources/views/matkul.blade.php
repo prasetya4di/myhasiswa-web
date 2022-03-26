@@ -7,7 +7,6 @@
         <h1 class="page-header">
             Mata Kuliah
         </h1>
-
     </div>
     <div id="page-inner">
 
@@ -124,7 +123,7 @@
             </div>
         </div>
     </div>
-    <!--  Modals data Matakuliah -->
+    <!--  Modals confirmation Matakuliah -->
     <div class="modal fade" id="deleteMatkul" tabindex="-1" role="dialog" aria-labelledby="deleteMatkulLabel"
          aria-hidden="true">
         <div class="modal-dialog">
